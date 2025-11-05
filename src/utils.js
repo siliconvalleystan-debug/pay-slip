@@ -35,14 +35,14 @@ export function normaliseDateInput(value = "") {
 }
 
 export function normaliseInputValue(field, rawValue) {
-  const trimmed = rawValue.trim();
   if (field.type === "number") {
-    return trimmed.replace(/[,\s]/g, "");
+    return rawValue.trim().replace(/[,\s]/g, "");
   }
   if (field.type === "date") {
-    return normaliseDateInput(trimmed);
+    return normaliseDateInput(rawValue.trim());
   }
-  return trimmed;
+  // For text fields, preserve spaces - don't trim during input
+  return rawValue;
 }
 
 export function parseNumber(rawValue) {

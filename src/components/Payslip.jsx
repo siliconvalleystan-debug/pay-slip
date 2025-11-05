@@ -22,7 +22,7 @@ export default function Payslip({ data, assets }) {
       </header>
       <h1 className="payslip-title">Salary Pay Slip</h1>
 
-      <table className="detail-table">
+      <table className="detail-table employee-info-table">
         <tbody>
           <tr>
             <td>Employee Name</td>

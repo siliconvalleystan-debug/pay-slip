@@ -10,6 +10,7 @@ export default function EmployeeRow({
   onRemove,
   onPaste,
   onGenerate,
+  onPreview,
   disableRemove,
   isGenerating,
 }) {
@@ -48,6 +49,16 @@ export default function EmployeeRow({
           >
             Generate PDF
           </button>
+          {onPreview && (
+            <button
+              type="button"
+              className="btn secondary"
+              onClick={() => onPreview(rowIndex)}
+              disabled={isGenerating}
+            >
+              Preview
+            </button>
+          )}
           <button
             type="button"
             className="btn secondary"
